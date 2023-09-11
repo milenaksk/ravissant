@@ -1,0 +1,12 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+h1 {
+  color: #8a79f7;  
+  padding-bottom: 5px;
+}
+p{
+  line-height: normal;
+  padding: 10px 0px 0px 0px;
+}
