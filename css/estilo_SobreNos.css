@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
 body {
   font-family: 'Poppins', sans-serif;
   overflow-x: hidden;
@@ -6,7 +8,7 @@ h1 {
   color: #8a79f7;  
   padding-bottom: 5px;
 }
-p{
+p {
   line-height: normal;
   padding: 10px 0px 0px 0px;
 }
