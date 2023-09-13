@@ -146,6 +146,27 @@ body {
   hr {
     border: 5px solid black;
   }
+
+  .cadastroNovidades {
+    background-color:  #EBCDFA;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    cursor: pointer;
+    
+  }
+
+  .imagens-fim {
+    margin-top: 5px;
+    margin-bottom: 10px;
+  }
+
+  .imagens-fim i {
+    margin: 0 5px;
+    cursor: pointer;
+  }
+
   
   .image-link-2 {
     position: absolute;
