@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif !important;
+  }
+
+  .img-fluid {
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+
+  .titulo-categoria {
+    font-weight: bold;
+  }
+  
+  .option {
+    margin: 20px;
+    background: #f0f0f0;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 10px 10px 5px #e4cef0;
+  }
+  
+  .imgCatalogo {
+    width: 150px;
+    margin: 40px;
+  }
+
+  .descricao-produto {
+    font-size: 15px;
+  }
+  
+  .botao-conferir {
+    background-color: white;
+    color: black;
+    border: 2px solid black;
+    padding: 10px;
+    text-transform: uppercase;
+    border-color: #e4cef0;
+    border-radius: 5px;
+  }
+
+  .botao-conferir:hover {
+    transition-duration: 0.4s;
+    background-color: #e4cef0;
+  }
+
+  hr {
+    border-color: #000000;
+    border-width: 1px;
+  }
+
