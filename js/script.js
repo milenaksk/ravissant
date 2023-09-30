@@ -10,7 +10,7 @@ botaoLogin.addEventListener("click", function(event) {
   // Verifica se os campos estão vazios
   if (inputLoginEmail.value === "" || inputLoginPassword.value === "") {
     // Exibe um alerta informando o usuário
-    alert("Por favor, preencha todos os campos antes de logar.");
+    alert("Por favor, preencha todos os campos antes de enviar.");
   } else {
     
   }
