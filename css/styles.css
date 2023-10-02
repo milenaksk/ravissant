@@ -177,3 +177,36 @@ hr {
 .bg-purple {
   background-color: #EBCDFA;
 }
+
+.option {
+  margin: 20px;
+  background: #f0f0f0;
+  padding: 20px;
+  text-align: center;
+  border-radius: 5px;
+  box-shadow: 10px 10px 5px #e4cef0;
+}
+
+.imgCatalogo {
+  margin: 0 auto;
+  width: 150px;
+}
+
+.descricao-produto {
+  font-size: 15px;
+}
+
+.botao-conferir {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  padding: 10px;
+  text-transform: uppercase;
+  border-color: #e4cef0;
+  border-radius: 5px;
+}
+
+.botao-conferir:hover {
+  transition-duration: 0.4s;
+  background-color: #e4cef0;
+}
