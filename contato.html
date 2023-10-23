@@ -38,26 +38,26 @@
 
                 <!--Título do Form-->
                 <p class="h2 mb-3">Fale conosco</p>
-                <p class="mb-3">Preencha com seus dados e nossa equipe entrará em contato:</p>
+                <p class="mb-3">Preencha e nossa equipe entrará em contato:</p>
 
                 <!--Inputs-->
                 <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="inputName" required />
-                    <label for="inputName">Nome completo</label>
+                    <input type="text" class="form-control" id="inputContatoName" required />
+                    <label for="inputContatoName">Nome completo</label>
                 </div>
 
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="inputEmail" required />
-                    <label for="inputEmail">E-mail</label>
+                    <input type="email" class="form-control" id="inputContatoEmail" required />
+                    <label for="inputContatoEmail">E-mail</label>
                 </div>
 
                 <div class="form-group">
                     <label for="exampleFormControlTextarea1">Mensagem</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="5" placeholder="Deixe sua mensagem"></textarea>
+                    <textarea class="form-control" id="campoMensagem" rows="5" placeholder="Deixe sua mensagem"></textarea>
                 </div>
 
                 <!--Botão de enviar mensagem-->
-                <button class="btn btn-lg btn-dark mt-4 shadow-lg w-100" type="submit">Enviar mensagem</button>
+                <button class="btn btn-lg btn-dark mt-4 shadow-lg w-100" type="submit" id="botaoEnviarMensagem">Enviar mensagem</button>
             </form>
         </div>
     </div>
@@ -66,6 +66,8 @@
 <footer class="text-center text-lg-start bg-light text-muted">
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">© Todos os direitos reservados.</div>
 </footer>
+
+<script src="js/contato.js"></script>
 
 </body>
 </html>
