@@ -9,7 +9,7 @@ botaoEnviarMensagem.addEventListener("click", function(event) {
   // Previne o comportamento padrão do botão de submit
   event.preventDefault();
   // Verifica se os campos estão vazios
-  if (inputContatoName.value === "" || inputContatoEmail.value === "" || inputCampoMensagem.value === "") {
+  if (inputContatoName.value === "" || inputContatoEmail.value === "" || campoMensagem.value === "") {
     // Exibe um alerta informando o usuário
     alert("Todos os campos precisam estar preenchidos");
   }
