@@ -6,6 +6,8 @@ function inserir($nome, $email, $senha) {
 
   $usuario = new Usuario();
   $usuario->nome = $nome;
+  $usuario->email = $email;
+  $usuario->senha = $senha;
 
   $entityManager->persist($usuario);
   $entityManager->flush();
