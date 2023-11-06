@@ -1,7 +1,29 @@
 <?php
 require_once __DIR__ . "/src/autoload.php";
-
 session_start();
+
+$mensagemErro = null;
+
+function logar($email, $senha) {
+    global $entityManager, $mensagemErro;
+
+    $query = $entityManager->createQuery("SELECT u FROM Usuario u WHERE u.email = :email AND u.senha = :senha")
+    ->setParameter(":email", $email)
+    ->setParameter(":senha", $senha);
+
+    $usuario = $query->getOneOrNullResult();
+    if ($usuario === null){
+        $mensagemErro = "Email e/ou senha incorreta!";
+    } else {
+        $_SESSION["nome"] = $usuario->nome;
+        $_SESSION["isLogado"] = true;
+        redirect("/index.php");
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    logar($_POST["email"], $_POST["senha"]);
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,24 +62,26 @@ session_start();
 <div class="container mt-5">
     <div class="row align-items-center">
         <div class="col-md-10 mx-auto col-lg-10">
-            <form class="p-4 p-md-5 border rounded-3 bg-purple text-center shadow p-3 mb-5">
+            <div class="p-4 p-md-5 border rounded-3 bg-purple text-center shadow p-3 mb-5">
+                <form method="POST" action="<?php echo $url; ?>">
 
-                <!--Título do Form-->
-                <p class="h2 mb-3"><strong>Login</strong></p>
-                <p class="mb-3">Entre com sua conta</p>
+                    <!--Título do Form-->
+                    <p class="h2 mb-3"><strong>Login</strong></p>
+                    <p class="mb-3">Entre com sua conta</p>
 
-                <!--Inputs-->
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control w-100" id="inputLoginEmail" required />
-                    <label for="inputLoginEmail">E-mail</label>
-                </div>
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control w-100" id="inputLoginPassword" required />
-                    <label for="inputLoginPassword">Senha</label>
-                </div>
+                    <!--Inputs-->
+                    <div class="form-floating mb-3">
+                        <input name="email" type="email" class="form-control w-100" id="inputLoginEmail" required />
+                        <label for="inputLoginEmail">E-mail</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <input name="senha" type="password" class="form-control w-100" id="inputLoginPassword" required />
+                        <label for="inputLoginPassword">Senha</label>
+                    </div>
 
-                <!--Botão Entrar tipo submit-->
-                <button class="btn btn-lg btn-dark mb-4 shadow-lg w-100" type="submit" id="botaoLogin">Entrar</button>
+                    <!--Botão Entrar tipo submit-->
+                    <input class="btn btn-lg btn-dark mb-4 shadow-lg w-100" type="submit" value="Entrar"/>
+                </form>
 
                 <hr>
                 <br>
@@ -70,7 +94,7 @@ session_start();
                     <p><a href="#" class="text-decoration-none">Esqueci minha senha</a></p>
                     <a href="cadastro.php" class="text-decoration-none">Não tenho uma conta</a></p>
                 </div>
-            </form>
+            </div>
         </div>
     </div>
 </div>
@@ -79,8 +103,8 @@ session_start();
 <footer class="text-center text-lg-start bg-light text-muted">
     <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05)">© Todos os direitos reservados.</div>
 </footer>
-
-<!--Scripts-->
-<script src="js/login.js"></script>
+<?php if (isset($mensagemErro)) { ?>
+  <script>alert("<?php echo $mensagemErro; ?>");</script>
+<?php } ?>
 </body>
 </html>
