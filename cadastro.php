@@ -1,24 +1,33 @@
 <?php
 require_once __DIR__ . "/src/autoload.php";
+session_start();
+
+$mensagemErro = null;
 
 function inserir($nome, $email, $senha) {
-  global $entityManager;
+  global $entityManager, $mensagemErro;
 
-  $usuario = new Usuario();
-  $usuario->nome = $nome;
-  $usuario->email = $email;
-  $usuario->senha = $senha;
+  $query = $entityManager->createQuery("SELECT u FROM Usuario u WHERE u.email = :email")->setParameter(":email", $email);
 
-  $entityManager->persist($usuario);
-  $entityManager->flush();
+  $usuario = $query->getOneOrNullResult();
+  if ($usuario !== null){
+    $mensagemErro = "Email existe!";
+  } else {
+    $usuario = new Usuario();
+    $usuario->nome = $nome;
+    $usuario->email = $email;
+    $usuario->senha = $senha;
+
+    $entityManager->persist($usuario);
+    $entityManager->flush();
+
+    redirect("/login.php");
+  }
 }
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
   inserir($_POST["nome"], $_POST["email"], $_POST["senha"]);
 }
-
-
-session_start();
 ?>
 
 <!DOCTYPE html>
@@ -136,6 +145,8 @@ session_start();
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous">
 </script>
-<script src="js/cadastro.js"></script>
+<?php if (isset($mensagemErro)) { ?>
+  <script>alert("<?php echo $mensagemErro; ?>");</script>
+<?php } ?>
 </body>
 </html>
