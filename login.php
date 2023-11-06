@@ -39,7 +39,7 @@ session_start();
 <!--Form de Login-->
 <div class="container mt-5">
     <div class="row align-items-center">
-        <div class="col-md-10 mx-auto col-lg-5">
+        <div class="col-md-10 mx-auto col-lg-10">
             <form class="p-4 p-md-5 border rounded-3 bg-purple text-center shadow p-3 mb-5">
 
                 <!--Título do Form-->
@@ -48,11 +48,11 @@ session_start();
 
                 <!--Inputs-->
                 <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="inputLoginEmail" required />
+                    <input type="email" class="form-control w-100" id="inputLoginEmail" required />
                     <label for="inputLoginEmail">E-mail</label>
                 </div>
                 <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="inputLoginPassword" required />
+                    <input type="password" class="form-control w-100" id="inputLoginPassword" required />
                     <label for="inputLoginPassword">Senha</label>
                 </div>
 

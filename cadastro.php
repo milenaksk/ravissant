@@ -40,7 +40,7 @@ session_start();
 <!--Form de Cadastro-->
 <div class="container mt-5">
   <div class="row align-items-center">
-    <div class="col-md-10 mx-auto col-lg-5">
+    <div class="col-md-10 mx-auto col-lg-10">
       <form
               class="p-4 p-md-5 border rounded-3 bg-purple text-center shadow p-3 mb-5"
       >
@@ -49,15 +49,15 @@ session_start();
         <p class="mb-3">Preencha com os seus dados</p>
 
         <!--Inputs-->
-        <div class="form-floating mb-3">
-          <input type="text" class="form-control" id="inputCadastroName" required />
+        <div class="form-floating mb-3 f-width">
+          <input type="text" class="form-control w-100" id="inputCadastroName" required />
           <label for="inputCadastroName">Nome completo</label>
         </div>
 
         <div class="form-floating mb-3">
           <input
                   type="email"
-                  class="form-control"
+                  class="form-control w-100"
                   id="inputCadastroEmail"
                   required
           />
@@ -67,7 +67,7 @@ session_start();
         <div class="form-floating mb-3">
           <input
                   type="password"
-                  class="form-control"
+                  class="form-control w-100"
                   id="inputCadastroPassword"
                   required
           />
@@ -77,7 +77,7 @@ session_start();
         <div class="form-floating mb-3">
           <input
                   type="password"
-                  class="form-control"
+                  class="form-control w-100"
                   id="inputConfirmPassword"
                   required
           />
