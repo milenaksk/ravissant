@@ -115,7 +115,7 @@ session_start();
           Nossas joias são feitas com os materiais mais finos e duradouros,
           garantindo um brilho eterno que nunca desaparece.
         </p>
-        <a href="#" class="main-btn">COMPRAR</a>
+        <a href="/produtos.php" class="main-btn">COMPRAR</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -130,7 +130,7 @@ session_start();
           Com designs clássicos e atemporais, nossas jóias são a escolha
           perfeita para quem busca elegância e sofisticação.
         </p>
-        <a href="#" class="main-btn">COMPRAR</a>
+        <a href="produtos.php" class="main-btn">COMPRAR</a>
       </div>
     </div>
     <div class="carousel-item">
@@ -145,7 +145,7 @@ session_start();
           Cada peça de nossa coleção é única, criada com cuidado e atenção
           aos detalhes para garantir a máxima beleza e qualidade.
         </p>
-        <a href="#" class="main-btn">COMPRAR</a>
+        <a href="produtos.php" class="main-btn">COMPRAR</a>
       </div>
     </div>
   </div>
