@@ -89,3 +89,6 @@ fabric.properties
 
 # Built Visual Studio Code Extensions
 *.vsix
+
+composer.phar
+/vendor/
