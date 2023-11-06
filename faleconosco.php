@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/src/autoload.php";
+
 session_start();
 ?>
 
@@ -29,7 +31,7 @@ session_start();
 <!-- Header-->
 <nav class="navbar navbar-expand-lg bg-light shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <img src="img/logo-site.png" alt="Ravissant Jóias" width="75px"/>
         </a>
     </div>

@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/src/autoload.php";
+
 session_start();
 ?>
 
@@ -28,7 +30,7 @@ session_start();
 <!-- Header-->
 <nav class="navbar navbar-expand-lg bg-light shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.html">
+        <a class="navbar-brand" href="index.php">
             <img src="img/logo-site.png" alt="Ravissant Jóias" width="75px"/>
         </a>
     </div>
@@ -66,7 +68,7 @@ session_start();
 
                 <div>
                     <p><a href="#" class="text-decoration-none">Esqueci minha senha</a></p>
-                    <a href="cadastro.html" class="text-decoration-none">Não tenho uma conta</a></p>
+                    <a href="cadastro.php" class="text-decoration-none">Não tenho uma conta</a></p>
                 </div>
             </form>
         </div>

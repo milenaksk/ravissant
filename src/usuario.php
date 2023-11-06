@@ -24,4 +24,9 @@ class Usuario{
 	 * @ORM\Column(type="string", name="SENHA")
 	 */
 	public string $senha;
+
+    /**
+	 * @ORM\Column(type="string", name="NOME")
+	 */
+	public string $nome;
 }

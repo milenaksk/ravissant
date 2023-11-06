@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . "/src/autoload.php";
+
 session_start();
 ?>
 
@@ -27,7 +29,7 @@ session_start();
 <!--Navbar-->
 <nav class="navbar navbar-expand-lg bg-light shadow-sm">
   <div class="container-fluid">
-    <a class="navbar-brand" href="index.html">
+    <a class="navbar-brand" href="index.php">
       <img src="img/logo-site.png" alt="Ravissant Jóias" width="75px"/>
     </a>
     <button class="navbar-toggler"
@@ -42,12 +44,12 @@ session_start();
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mb-2 mb-lg-0 mx-auto">
         <li class="nav-item me-5">
-          <a class="nav-link" aria-current="page" href="sobrenos.html">
+          <a class="nav-link" aria-current="page" href="sobrenos.php">
             <strong>Sobre nós</strong>
           </a>
         </li>
         <li class="nav-item me-5">
-          <a class="nav-link active" href="produtos.html">
+          <a class="nav-link active" href="produtos.php">
             <strong>Nossos produtos</strong>
           </a>
         </li>
@@ -58,7 +60,7 @@ session_start();
                  aria-label="Search"/>
         </form>
         <li class="nav-item me-2">
-          <a class="nav-link" href="login.html">
+          <a class="nav-link" href="login.php">
             <img src="img/usuario.png" alt="Usuário" width="25px"/>
           </a>
         </li>
@@ -142,7 +144,7 @@ session_start();
     <button class="cadastroNovidades">Enviar</button>
   </form>
   <p style="padding-top: 15px" id="p-4">
-    <a href="contato.html" class="text-decoration-none fs-6">Fale conosco</a>
+    <a href="contato.php" class="text-decoration-none fs-6">Fale conosco</a>
   </p>
   <div class="imagens-fim">
     <i class="fa-brands fa-instagram" style="font-size: 20px"></i>
