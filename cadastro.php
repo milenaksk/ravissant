@@ -1,6 +1,21 @@
 <?php
 require_once __DIR__ . "/src/autoload.php";
 
+function inserir($nome, $email, $senha) {
+  global $entityManager;
+
+  $usuario = new Usuario();
+  $usuario->nome = $nome;
+
+  $entityManager->persist($usuario);
+  $entityManager->flush();
+}
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  inserir($_POST["nome"], $_POST["email"], $_POST["senha"]);
+}
+
+
 session_start();
 ?>
 
@@ -41,82 +56,71 @@ session_start();
 <div class="container mt-5">
   <div class="row align-items-center">
     <div class="col-md-10 mx-auto col-lg-10">
-      <form
-              class="p-4 p-md-5 border rounded-3 bg-purple text-center shadow p-3 mb-5"
-      >
-        <!--Título do Form-->
-        <p class="h2 mb-3">Criar uma conta</p>
-        <p class="mb-3">Preencha com os seus dados</p>
+      <div class="bg-purple p-4 p-md-5 border rounded-3 text-center shadow p-3 mb-5"> 
+        <form method="POST" action="<?php echo $url; ?>">
+          <!--Título do Form-->
+          <p class="h2 mb-3">Criar uma conta</p>
+          <p class="mb-3">Preencha com os seus dados</p>
 
-        <!--Inputs-->
-        <div class="form-floating mb-3 f-width">
-          <input type="text" class="form-control w-100" id="inputCadastroName" required />
-          <label for="inputCadastroName">Nome completo</label>
-        </div>
+          <!--Inputs-->
+          <div class="form-floating mb-3 f-width">
+            <input name="nome" type="text" class="form-control w-100" id="inputCadastroName" required />
+            <label for="inputCadastroName">Nome completo</label>
+          </div>
 
-        <div class="form-floating mb-3">
-          <input
-                  type="email"
-                  class="form-control w-100"
-                  id="inputCadastroEmail"
-                  required
-          />
-          <label for="inputCadastroEmail">E-mail</label>
-        </div>
+          <div class="form-floating mb-3">
+            <input
+                    name="email"
+                    type="email"
+                    class="form-control w-100"
+                    id="inputCadastroEmail"
+                    required
+            />
+            <label for="inputCadastroEmail">E-mail</label>
+          </div>
 
-        <div class="form-floating mb-3">
-          <input
-                  type="password"
-                  class="form-control w-100"
-                  id="inputCadastroPassword"
-                  required
-          />
-          <label for="inputCadastroPassword">Senha</label>
-        </div>
+          <div class="form-floating mb-3">
+            <input
+                    name="senha"
+                    type="password"
+                    class="form-control w-100"
+                    id="inputCadastroPassword"
+                    required
+            />
+            <label for="inputCadastroPassword">Senha</label>
+          </div>
 
-        <div class="form-floating mb-3">
-          <input
-                  type="password"
-                  class="form-control w-100"
-                  id="inputConfirmPassword"
-                  required
-          />
-          <label for="inputConfirmPassword">Confirme a senha</label>
-        </div>
+          <div class="form-floating mb-3">
+            <input
+                    type="password"
+                    class="form-control w-100"
+                    id="inputConfirmPassword"
+                    required
+            />
+            <label for="inputConfirmPassword">Confirme a senha</label>
+          </div>
 
-        <!--Botões-->
-        <button
-                class="btn btn-lg btn-dark mb-4 shadow-lg w-100"
-                type="submit"
-        >
-          Criar
-        </button>
+          <!--Botões-->
+          <input class="btn btn-lg btn-dark mb-4 shadow-lg w-100" type="submit" value="Criar"/>
 
-        <hr />
-        <br />
+          <hr />
+          <br />
+        </form>
 
-        <button
-                class="btn btn-lg btn-dark mb-4 shadow-lg w-100"
-                type="submit"
-        >
+        <button class="btn btn-lg btn-dark mb-4 shadow-lg w-100">
           <i class="fa-brands fa-facebook-f"></i> Criar com Facebook
         </button>
 
-        <button
-                class="btn btn-lg btn-dark mb-4 shadow-lg w-100"
-                type="submit"
-        >
+        <button class="btn btn-lg btn-dark mb-4 shadow-lg w-100">
           <i class="fa-brands fa-google-plus-g"></i> Criar com Google
         </button>
 
         <div class="text-center">
           <p>
-            <a href="login.php" class="text-decoration-none"
-            >Já tenho uma conta</a
-            >
+            <a href="login.php" class="text-decoration-none">Já tenho uma conta</a>
           </p>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>
